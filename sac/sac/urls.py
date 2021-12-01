@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from ciudades.views import ciudadVista
+from ciudades.views import DatoVista, CiudadVista
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ciudades/', ciudadVista.as_view(), name='ciudad_lista'),
-    path('ciudades/<int:id>', ciudadVista.as_view(), name='ciudad_pro')
+    path('datos/', DatoVista.as_view(), name='dato_lista'),
+    path('datos/<int:id>', DatoVista.as_view(), name='dato_pro'),
+    path('ciudades/', CiudadVista.as_view(), name='lista'),
+    path('ciudades/<int:id>', CiudadVista.as_view(), name='ciudad_lista')
 
 ]
